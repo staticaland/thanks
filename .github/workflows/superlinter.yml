@@ -1,0 +1,42 @@
+name: Super-Linter
+
+on:
+
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+
+  lint:
+
+    name: Lint the code
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      statuses: write # for github/super-linter/slim to mark status of each linter run
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          fetch-depth: 0
+
+
+      - name: Run Super-Linter
+        uses: github/super-linter/slim@454ba4482ce2cd0c505bc592e83c06e1e37ade61 # v4.10.1
+        env:
+          DEFAULT_BRANCH: main
+
+          VALIDATE_ALL_CODEBASE: ${{ !contains(github.event_name, 'pull_request') }}
+          VALIDATE_JSCPD: false
+          VALIDATE_DOCKERFILE: false
+          VALIDATE_SHELL_SHFMT: false
+          VALIDATE_EDITORCONFIG: false
+
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
