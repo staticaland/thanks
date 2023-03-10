@@ -7,8 +7,16 @@ import argparse
 
 import configargparse
 import openai
+from langchain.llms import OpenAI
+from langchain import PromptTemplate, LLMChain
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+template = """Question: {question}
+
+Answer: Let's think step by step."""
+
+prompt = PromptTemplate(template=template, input_variables=["question"])
 
 
 def main(opts: argparse.Namespace):
@@ -35,6 +43,12 @@ def main(opts: argparse.Namespace):
     )
 
     print(response)
+
+    llm = OpenAI()
+    llm_chain = LLMChain(prompt=prompt, llm=llm)
+    question = "Who is known to interview Snoop Dogg repeatedly?"
+
+    print(llm_chain.run(question))
 
 
 def generate_prompt(animal: str) -> str:
