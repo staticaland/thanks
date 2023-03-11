@@ -12,13 +12,6 @@ from langchain import PromptTemplate, LLMChain
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-template = """Question: {question}
-
-Answer: Let's think step by step."""
-
-prompt = PromptTemplate(template=template, input_variables=["question"])
-
-
 def main(opts: argparse.Namespace):
     """
     Main entry point of the app.
@@ -43,6 +36,12 @@ def main(opts: argparse.Namespace):
     )
 
     print(response)
+
+    TEMPLATE = """Question: {question}
+
+    Answer: Let's think step by step."""
+
+    prompt = PromptTemplate(template=TEMPLATE, input_variables=["question"])
 
     llm = OpenAI()
     llm_chain = LLMChain(prompt=prompt, llm=llm)
