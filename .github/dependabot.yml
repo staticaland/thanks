@@ -8,3 +8,12 @@ updates:
       prefix: fix
       prefix-development: chore
       include: scope
+    
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
