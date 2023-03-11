@@ -1,12 +1,19 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "postCreateCommand": "",
   "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
     "vscode": {
       "extensions": [
-        "esbenp.prettier-vscode",
-        "DavidAnson.vscode-markdownlint",
-        "redhat.vscode-yaml",
-        "ms-azuretools.vscode-docker"
+        "ms-toolsai.jupyter",
+        "ms-python.python"
       ]
     }
   }
