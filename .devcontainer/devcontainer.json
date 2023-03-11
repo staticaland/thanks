@@ -6,7 +6,7 @@
   "waitFor": "onCreateCommand",
   "updateContentCommand": {
     "pip_requirements": ["python3", "-m", "pip", "install", "-r", "requirements.txt"],
-    "aicommits": ["npm", "install", "aicommits"]
+    "aicommits": ["npm", "install", "-g", "aicommits"]
   },
   "postCreateCommand": "",
   "customizations": {
@@ -18,7 +18,8 @@
 		"ms-toolsai.jupyter",
 		"ms-python.python",
 		"ms-python.pylint",
-		"esbenp.prettier-vscode"
+		"esbenp.prettier-vscode",
+		"GitHub.copilot"
 	]
     }
   }
