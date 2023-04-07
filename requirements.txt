@@ -1,4 +1,4 @@
 ConfigArgParse==1.5.3
 openai==0.27.2
-langchain==0.0.113
+langchain==0.0.133
 jupyter==1.0.0 
