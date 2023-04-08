@@ -1,3 +1,5 @@
+# https://github.com/gkamradt/langchain-tutorials/blob/main/LangChain%20Cookbook.ipynb
+
 import os
 
 from langchain.llms import OpenAI
