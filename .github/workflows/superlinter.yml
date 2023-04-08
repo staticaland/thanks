@@ -33,10 +33,12 @@ jobs:
         env:
           DEFAULT_BRANCH: main
 
+          SUPPRESS_POSSUM: true
+
           VALIDATE_ALL_CODEBASE: ${{ !contains(github.event_name, 'pull_request') }}
-          VALIDATE_JSCPD: false
-          VALIDATE_DOCKERFILE: false
-          VALIDATE_SHELL_SHFMT: false
-          VALIDATE_EDITORCONFIG: false
+          VALIDATE_PYTHON: true
+          VALIDATE_YAML: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_GITHUB_ACTIONS: true
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
