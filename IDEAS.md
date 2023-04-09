@@ -33,3 +33,9 @@ When the input is Oslo:
 
 A classic dish from the Oslo region is lapskaus. It is a stew made with potatoes, carrots, beef and other vegetables cooked in beef broth. It is often served with mustard, bread, and pickles.
 ```
+
+What about multiple inputs and outputs?
+
+> Of course, not all sequential chains will be as simple as passing a single string as an argument and getting a single string as output for all steps in the chain. In this next example, we will experiment with more complex chains that involve multiple inputs, and where there also multiple final outputs.
+>
+> Of particular importance is how we name the input/output variable names. In the above example we didn’t have to think about that because we were just passing the output of one chain directly as input to the next, but here we do have worry about that because we have multiple inputs.
