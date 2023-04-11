@@ -47,3 +47,7 @@ I will download [A General History of the Pirates](https://standardebooks.org/eb
 I will use the [UnstructuredEPubLoader from LangChain](https://python.langchain.com/en/latest/modules/indexes/document_loaders/examples/epub.html).
 
 I will follow the [Question Answering over Docs method](https://python.langchain.com/en/latest/use_cases/question_answering.html).
+
+Needs unstructured Python package.
+
+Needs Pandoc.
