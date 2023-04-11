@@ -51,3 +51,19 @@ I will follow the [Question Answering over Docs method](https://python.langchain
 Needs unstructured Python package.
 
 Needs Pandoc.
+
+## Plan of attack
+
+I will load the documents.
+
+I will split the documents.
+
+I will create embeddings.
+
+I will store it in a vectorstore.
+
+I will do a retrieval.
+
+I will then pass documents, along with the original question, to the language model and have it generate a response
+
+That is my current understanding of the process.
